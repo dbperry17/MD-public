@@ -6,7 +6,7 @@ Since I can't use subfolders, all files will be using a naming convention simila
 
 ---
 
-#Purpose of these scripts
+# Purpose of these scripts
 
 I am currently reading a very long story. I found the story in a webcomic format, and then later found it in novel format. I am going through the novel, but I remembered that I had difficulty remembering characters and concepts in the comic. Normally, I'd use a fan wiki to keep track, but those are written by people who have finished reading the story and thus contain spoilers that are easy to see even when I'm not looking for them.
 
