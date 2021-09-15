@@ -141,8 +141,9 @@ function setHumanSpoiler(e, spoiler)
   {
     let h = validList[i];
     h.set("Spoiler Status", spoiler);
-    if(spoiler.equals("Future Entry"))
-      h.field(
+    //TODO: figure out what I was doing before I got interrupted
+    //if(spoiler.equals("Future Entry"))
+      //h.field(
   }
 
   return validList;
