@@ -6,15 +6,6 @@ function sortProp(arr, prop)
   return arr;
 }
 
-//by default, MD outputs entries in an array that is sorted by creation date.
-function getAndSortCh()
-{
-  var oList = lib().entries();
-
-  //sort by chapter
-  return sortProp(oList, "Chapter #");
-}
-
 //MD (on Android, at least) has an old version of JavaScript
 //This function is needed as a workaround for functions built in to later versions of JavaScript.
 //Needed for getCurrentChars
