@@ -4,6 +4,8 @@ My scripts for use in [Memento Database](https://mementodatabase.com/). Unfortun
 
 Since I can't use subfolders, all files will be using a naming convention similar to the subfolder paths that I *would* be using.
 
+Further, Git is not integrated into the app, as far as I can tell, and I typically use it exclusively on my phone anyway, so all updates will unfortunately be manual.
+
 ---
 
 # Purpose of these scripts
