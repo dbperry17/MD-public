@@ -8,12 +8,14 @@ function copyCurrentToGeneric(e)
   e.set("Current Status", cur.field("Status"));
 }
 
+fieldList fList = new fieldList();
+
 //To make sure outdated data isn't accidentally kept in
 //Leave list of versions alone!
 
 function setAllToNull(e)
 {
-  const flds = getAllFields();
+  const flds = fList.all();
   for (i in flds)
   {
     let f = flds[i].field;
@@ -63,7 +65,7 @@ function setCurrent(e, cur)
 //Set the generalized fields to match the "current" version
 function setGenFieldsToCur(e, cur)
 {
-  let sharedFields = getSharedFields();
+  let sharedFields = fList.shared();
 
   //Get&Set fields identical between generic and versioned
   for (i in sharedFields)
@@ -74,8 +76,8 @@ function setGenFieldsToCur(e, cur)
   }
 
   //Get&Set Attributes of those shared fields to match current
-  let aFields = getAttrFields();
-  let attrList = getFieldAttrs();
+  let aFields = fList.attrFields();
+  let attrList = fList.attrs();
   
   for(j in aFields)
   {
