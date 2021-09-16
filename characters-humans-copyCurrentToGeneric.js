@@ -8,7 +8,7 @@ function copyCurrentToGeneric(e)
   e.set("Current Status", cur.field("Status"));
 }
 
-;//To make sure outdated data isn't accidentally kept in
+//To make sure outdated data isn't accidentally kept in
 //Leave list of versions alone!
 
 function setAllToNull(e)
