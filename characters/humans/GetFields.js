@@ -1,5 +1,3 @@
-
-
 function getAllFields()
 {
   return [{field:"Picture"},
