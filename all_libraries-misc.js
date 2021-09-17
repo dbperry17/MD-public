@@ -65,3 +65,46 @@ function clearUnlink(e, fld)
   else
     e.set(fld, null);
 }
+
+//MD uses an old version of JavaScript, so must write own includes() function
+function includes(arr, item)
+{
+    return (arr.indexOf(item) > -1);
+}
+
+//When choosing a field to sort by, MD does it alphabetically.
+//Using this function, one can create a JavaScript field that takes
+//the possible values of the sorted field in the order you place importance,
+//with values going from low to high.
+//Note that this version is for use in JavaScript fields only,
+//as no entry is specified. For use in trigger/action/shared scripts,
+//use mySort(), the function listed after this one.
+
+/*
+//Example usage:
+var myList = ["Equipment", "Reusable Item", "Equipable Item", "Consumable", "Unknown"];
+var myFieldName = "Usage";
+sortField(myFieldName, myList);
+*/
+
+function sortField(fieldName, myList)
+{
+    //var myField = field(fieldName);
+  var myField = fieldName;
+  var length = myList.length;
+
+  for (var i = 0; i < length; i++)
+    if(myField == myList[i])
+      return i+1;
+}
+*/
+
+//Version for use in trigger/action/shared scripts
+function mySort(fieldVal, myList)
+{
+  var length = myList.length;
+
+  for (var i = 0; i < length; i++)
+    if(fieldVal == myList[i])
+      return i+1;
+}
