@@ -18,6 +18,6 @@ For the curious, the webcomic version can be found [here](https://www.webtoons.c
 
 # A note about debugging
 
-Unfortunately, some scripts that worked fine copying and pasting into each library seem to be disliked now that I'm using those same scripts via GitHub. As I am rather new to JavaScript, I am not always immediately able to spot these mistakes. Due to the nature of the "only started misbehaving when switching to GitHub," there's really no way to try and debug these without constantly creating new commits, especially since I've pretty much exclusively used my phone for this due to the nature of the app.
+Unfortunately, some scripts that worked fine copying and pasting into each library seem to be disliked now that I'm using those same scripts via GitHub. As I am rather new to JavaScript, I am not always immediately able to spot these mistakes. Due to the nature of the "only started misbehaving when switching to GitHub" problem, there's really no way to try and debug these without constantly creating new commits, especially since I've pretty much exclusively used my phone for this due to the nature of the app.
 
 As such, please excuse the messy commit history some of these files may have.
