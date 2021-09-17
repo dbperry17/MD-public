@@ -97,7 +97,6 @@ function sortField(fieldName, myList)
     if(myField == myList[i])
       return i+1;
 }
-*/
 
 //Version for use in trigger/action/shared scripts
 function mySort(fieldVal, myList)
