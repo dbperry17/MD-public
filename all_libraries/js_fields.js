@@ -1,13 +1,10 @@
-//(possible JS libraries for JS fields must be separate from JS libraries for MD libraries)
-
-
 //When choosing a field to sort by, MD does it alphabetically.
 //Using this function, one can create a JavaScript field that takes
 //the possible values of the sorted field in the order you place importance,
 //with values going from low to high.
 //Note that this version is for use in JavaScript fields only,
 //as no entry is specified. For use in trigger/action/shared scripts,
-//use mySort(), which is defined in all_libraries-misc.js.
+//use mySort(), which is defined in all_libraries/misc.js.
 /*
 //Example usage:
 var myList = ["Equipment", "Reusable Item", "Equipable Item", "Consumable", "Unknown"];
