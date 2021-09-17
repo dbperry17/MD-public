@@ -22,5 +22,8 @@ function sortField(fieldName, myList)
 
   for (var i = 0; i < length; i++)
     if(myField == myList[i])
+{
+message("i + 1 = " + (i + 1));
       return i+1;
+}
 }
