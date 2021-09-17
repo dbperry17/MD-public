@@ -17,8 +17,7 @@ sortField(myFieldName, myList);
 
 function sortField(fieldName, myList)
 {
-    //var myField = field(fieldName);
-  var myField = fieldName;
+  var myField = field(fieldName);
   var length = myList.length;
 
   for (var i = 0; i < length; i++)
