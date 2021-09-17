@@ -44,6 +44,8 @@ function getAllFields()
   {field:"Liked by"},
   {field:"Disliked by"},
   {field:"Neither liked nor disliked by"},
+  {field:"Introduced?"},
+  {field:"Hangul verified?"},
   {field:"Any Scenario Data?"},
   {field:"Main Scenario #4 activated?"},
   {field:"Mission 4: Flag Holder?"},
@@ -159,7 +161,10 @@ function getChangedFields()
 
 function getAddedFields()
 {
-  return ["Current Version", "Updated Chapter"];
+  return ["Current Version",
+          "Updated Chapter",
+          "Introduced?",
+          "Hangul verified?"];
 }
 
 function getSharedFields()
