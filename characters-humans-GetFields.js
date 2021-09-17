@@ -40,7 +40,7 @@ function getAllFields()
   {field:"Main Scenario #4: Flag Color"},
   {field:"Home Station"},
   {field:"Important Items"},
-  {field:"Single Use Items", attr:"Single Use Items:Amount owned (if known)"},
+  {field:"Single Use Items", attr:"Single Use Items:Amount owned"},
   {field:"Liked by"},
   {field:"Disliked by"},
   {field:"Neither liked nor disliked by"},
@@ -61,9 +61,9 @@ function getAllFields()
 /*
 //Attributes of fields
 field("Stigma").attr("Level")
-field("Personal Attributes").attr("Extra notes"
+field("Personal Attributes").attr("Extra notes")
 field("Personal Skills").attr("Level")
-field("Single Use Items").attr("Amount owned (if known)"
+field("Single Use Items").attr("Amount owned")
 */
 function getAttrFields()
 {
@@ -72,7 +72,7 @@ function getAttrFields()
 
 function getFieldAttrs()
 {
-  return ["Level", "Extra notes", "Level", "Amount owned (if known)"];
+  return ["Level", "Extra notes", "Level", "Amount owned"];
 }
 
 function getVersionFields()
@@ -115,7 +115,7 @@ function getVersionFields()
   {field:"Main Scenario #4: Flag Color"},
   {field:"Home Station"},
   {field:"Important Items"},
-  {field:"Single Use Items", attr:"Single Use Items:Amount owned (if known)"},
+  {field:"Single Use Items", attr:"Single Use Items:Amount owned"},
   {field:"Liked by"},
   {field:"Disliked by"},
   {field:"Neither liked nor disliked by"},
