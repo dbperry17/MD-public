@@ -2,8 +2,7 @@ function copyCurrentToGeneric(e)
 {
   setAllToNull(e);
   let cur = getCurrent(e);
-  message(cur.field("Entry Name"));
-  let color = e.field("Current Version")[0].field("Spoiler Status color");
+  let color = cur.field("Spoiler Status color");
   e.set("Spoiler Status color",color)
   setCurrent(e, cur);
   setGenFieldsToCur(e, cur);
