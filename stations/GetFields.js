@@ -6,7 +6,6 @@ function getSharedFields()
           "Target Station",
           "Targeted by",
           "Allies",
-          "Generalized Entry",
           "Leader",
           "Members",
           "Spoiler Status color"];
