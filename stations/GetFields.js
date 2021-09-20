@@ -1,6 +1,6 @@
-function getVersionedFields()
+function getSharedFields()
 {
-  return ["Station Name
+  return ["Station Name",
           "Valid as of",
           "Flag Color",
           "Target Station",
@@ -9,7 +9,5 @@ function getVersionedFields()
           "Generalized Entry",
           "Leader",
           "Members",
-          "Spoiler Status",
-          "Spoiler Status color",
-          "General Key"];
+          "Spoiler Status color"];
 }
