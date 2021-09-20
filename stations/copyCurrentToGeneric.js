@@ -57,6 +57,7 @@ function getCurrent(e)
 //set a specific version entry as the most current one
 function setCurrent(e, cur)
 {
+  cur.set("Spoiler Status", "Current Entry");
   //prevent duplicates
   let curList = e.field("Current Version");
   if(curList.length > 0)
