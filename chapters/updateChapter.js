@@ -22,7 +22,7 @@ function epName(e)
   else
     desc = "Ep. " + num;
 
-  desc += " – " + name;
+  desc += " — " + name;
 
   e.set("Episode Name", name);
   e.set("eDesc", desc);
@@ -73,28 +73,31 @@ function setChapter(eList, start, lc)
 
   log("Finished chapters, starting humans setup");
   setHumans(charList);
-  log("Finished human setup, starting scenario setup");
+  log("Finished humans starting scenarios");
   setScenarios(scenList);
-  log ("Finished scenario setup.");
+  log ("Finished scenarios.");
 }
 
 function setHumans(charList)
 {
   const filteredArray = getCurrentChars(charList);
+  log("Finished humans setup, starting humans.");
   const fLen = filteredArray.length;
 
   for(var i = 0; i < fLen; i++)
+  {
     filteredArray[i].set("Spoiler Status", "Current Entry");
+  }
 
-  let genListH = libByName("Humans — Versioned"). entries ();
+  let genListH = filteredArray;
+ //= libByName("Humans — Versioned"). entries ();
 
   for (let h in genListH)
   {
     let v = genListH[h].field("Generalized Entry")[0];
-    log(v.field("Name"));
-    //let cur = getCurrent(v);
+    //log(v.field("Name"))
     copyCurrentToGeneric(v);
-    //setCurrent(v, cur);
+    v.set("Introduced?", true);
   }
 }
 
@@ -108,23 +111,6 @@ function setScenarios (scenList)
     if(a.equals("Start") || a.equals("Ongoing"))
       l.set("Spoiler Status", "Current Entry");
   }
-}
-
-function validHumanList(ch, list)
-{
-  var validList = [];
-  let len = list.length;
-
-  for (let i = 0; i < len; i++)
-  {
-  
-    let h = list[i];
-    let hCh = h.field("Valid as of")[0].field("Chapter #");
-    if(hCh == ch)
-      validList.push(h);
-  }
-
-  return validList;
 }
 
 function setHumanSpoiler(e, spoiler)
@@ -141,9 +127,23 @@ function setHumanSpoiler(e, spoiler)
   {
     let h = validList[i];
     h.set("Spoiler Status", spoiler);
-    //TODO: figure out what I was doing before I got interrupted
-    //if(spoiler.equals("Future Entry"))
-      //h.field(
+  }
+
+  return validList;
+}
+
+function validHumanList(ch, list)
+{
+  var validList = [];
+  let len = list.length;
+
+  for (let i = 0; i < len; i++)
+  {
+  
+    let h = list[i];
+    let hCh = h.field("Valid as of")[0].field("Chapter #");
+    if(hCh == ch)
+      validList.push(h);
   }
 
   return validList;
@@ -168,7 +168,9 @@ const na = "Name";
 const or = "Order introduced";
 const chSo = "Chapter Sort";
 
-
+//https://stackoverflow.com/a/53042397
+//Note: MD uses an old version of JavaScript, so objectValues() function needed to be written.
+//It is in all_libraries/misc.js
 function getCurrentChars(array)
 {
   let filteredArray = objectValues(array.reduce((unique, o) => {
