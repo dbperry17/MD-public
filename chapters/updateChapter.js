@@ -45,6 +45,7 @@ function setChapter(eList, start, lc)
 
   const charList = [];
   const scenList = [];
+  const statList = [];
 
   for(var i = start; i < len; i++)
   {
@@ -56,13 +57,16 @@ function setChapter(eList, start, lc)
       e.set("Read?", false);
       setHumanSpoiler(e, "Future Entry");
       setScenarioSpoiler(e, "Future Entry")
+      setStationSpoiler (e, "Future Entry");
     } 
     else
     {
       e.set("Read?", true);
-      var tempListH = setHumanSpoiler(e, "Old Entry");
-      for (h in tempListH)
-        charList.push(tempListH[h]);
+      statList = setStationSpoiler (e, "Old Entry");
+      //var tempListH
+      charList = setHumanSpoiler(e, "Old Entry");
+      //for (h in tempListH)
+        //charList.push(tempListH[h]);
       var tempListS = setScenarioSpoiler(e, "Old Entry");
     
       if(eCh == lc)
@@ -75,8 +79,65 @@ function setChapter(eList, start, lc)
   setHumans(charList);
   log("Finished humans starting scenarios");
   setScenarios(scenList);
-  log ("Finished scenarios.");
+  log ("Finished scenarios, starting stations.");
+  setStations(statList);
+  log("Finished Stations.");
 }
+
+function setStations(statList)
+{
+  const filteredArray = getCurrentChars(statList);
+  log("Finished stations setup, starting stations.");
+  const fLen = filteredArray.length;
+
+  for(var i = 0; i < fLen; i++)
+  {
+    filteredArray[i].set("Spoiler Status", "Current Entry");
+  }
+
+  for (let s in filteredArray)
+  {
+    let v = filteredArray[s].field("Generalized Entry")[0];
+    copyCurrentToGeneric(v);
+  }
+}
+
+function setStationSpoiler(e, spoiler)
+{
+  var list = libByName("Stations — Versioned"). linksTo(e);
+
+  let eCh = e.field("Chapter #");
+  
+  var validList = validStationList(eCh, list);
+
+  let len = validList.length;
+
+  for (let i = 0; i < len; i++)
+  {
+    let s = validList[i];
+    s.set("Spoiler Status", spoiler);
+  }
+
+  return validList;
+}
+
+function validStationList(ch, list)
+{
+  var validList = [];
+  let len = list.length;
+
+  for (let i = 0; i < len; i++)
+  {
+  
+    let s = list[i];
+    let sCh = s.field("Chapter Sort")[0];
+    if(sCh == ch)
+      validList.push(h);
+  }
+
+  return validList;
+}
+
 
 function setHumans(charList)
 {
@@ -89,12 +150,12 @@ function setHumans(charList)
     filteredArray[i].set("Spoiler Status", "Current Entry");
   }
 
-  let genListH = filteredArray;
+  //let genListH = filteredArray;
  //= libByName("Humans — Versioned"). entries ();
 
-  for (let h in genListH)
+  for (let h in filteredArray)
   {
-    let v = genListH[h].field("Generalized Entry")[0];
+    let v = filteredArray[h].field("Generalized Entry")[0];
     //log(v.field("Name"))
     copyCurrentToGeneric(v);
     v.set("Introduced?", true);
@@ -141,7 +202,7 @@ function validHumanList(ch, list)
   {
   
     let h = list[i];
-    let hCh = h.field("Valid as of")[0].field("Chapter #");
+    let hCh = h.field("Chapter Sort");
     if(hCh == ch)
       validList.push(h);
   }
