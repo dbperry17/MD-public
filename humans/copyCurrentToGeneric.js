@@ -36,7 +36,6 @@ function getCurrent(e)
     if(v.field("Spoiler Status"). equals ("Current Entry"))
     {
       cur = v;
-      e.set("Introduced?", true);
       break;
     }
   }
@@ -88,7 +87,7 @@ function setGenFieldsToCur(e, cur)
     {
       e.field(fld)[k].setAttr(att, cf[k].attr(att));
     }
-  } 
+  }
 
   //setPicture(e, cur);
 }
