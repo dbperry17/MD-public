@@ -25,6 +25,7 @@ function setAllToNull(e)
 //get version entry labeled current
 function getCurrent(e)
 {
+  e.set("Introduced?", false);
   let cur = null;
 
   const versions = e.field("All Versions");
@@ -35,6 +36,7 @@ function getCurrent(e)
     if(v.field("Spoiler Status"). equals ("Current Entry"))
     {
       cur = v;
+      e.set("Introduced?", true);
       break;
     }
   }
@@ -86,7 +88,7 @@ function setGenFieldsToCur(e, cur)
     {
       e.field(fld)[k].setAttr(att, cf[k].attr(att));
     }
-  }
+  } 
 
   //setPicture(e, cur);
 }
