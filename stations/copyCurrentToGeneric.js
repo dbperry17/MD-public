@@ -11,7 +11,7 @@ function copyCurrentToGeneric(e)
 
 function setAllToNull(e)
 {
-  const flds = getVersionedFields();
+  const flds = getSharedFields();
   for (i in flds)
   {
     let f = flds[i].field;
@@ -63,7 +63,7 @@ function setCurrent(e, cur)
 //Set the generalized fields to match the "current" version
 function setGenFieldsToCur(e, cur)
 {
-  let sharedFields = getVersionedFields();
+  let sharedFields = getSharedFields();
 
   //Get&Set fields identical between generic and versioned
   for (i in sharedFields)
