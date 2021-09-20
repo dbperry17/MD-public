@@ -36,7 +36,7 @@ function getCurrent(e)
     if(v.field("Spoiler Status"). equals ("Current Entry"))
     {
       cur = v;
-      if(cur.field("Valid as of")[0].field("Read?")
+      if(cur.field("Valid as of")[0].field("Read?"))
         e.set("Introduced?", true);
       break;
     }
