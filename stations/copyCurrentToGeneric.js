@@ -14,7 +14,7 @@ function setAllToNull(e)
   const flds = getSharedFields();
   for (i in flds)
   {
-    let f = flds[i].field;
+    let f = flds[i];
     if(!(f.equals("All Versions")))
         clearUnlink(e, f);
   }
