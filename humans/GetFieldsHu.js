@@ -1,4 +1,4 @@
-function getAllFields()
+function getAllFieldsHu()
 {
   return [{field:"Picture"},
   {field:"Name"},
@@ -65,17 +65,17 @@ field("Personal Attributes").attr("Extra notes")
 field("Personal Skills").attr("Level")
 field("Single Use Items").attr("Amount owned")
 */
-function getAttrFields()
+function getAttrFieldsHu()
 {
   return ["Stigma", "Personal Attributes", "Personal Skills", "Single Use Items"];
 }
 
-function getFieldAttrs()
+function getFieldAttrsHu()
 {
   return ["Level", "Extra notes", "Level", "Amount owned"];
 }
 
-function getVersionFields()
+function getVersionFieldsHu()
 {
   //Field names to copy to another lib
   const fields=[{field:"Picture"},
@@ -140,24 +140,24 @@ function getVersionFields()
     return fields;
 }
 
-function getSortFields()
+function getSortFieldsHu()
 {
   return ["General Importance Sort", "Current Importance Sort", "Status Sort", "Order Introduced", "Chapter Sort", "Spoiler Sort"];
 }
 
-function getRemovedFields()
+function getRemovedFieldsHu()
 {
   return ["Custom Description", "Custom Entry Name", "Spoiler Status", "Copy?", "Chapter Sort", "Spoiler Sort"];
 }
 
-function getChangedFields()
+function getChangedFieldsHu()
 {
   return [{ver:"Status", gen:"Current Status"}];
 //{ver:"mykey", gen:"Sorting Key"},
 //{ver:"Previous Version", gen:"All Versions"}];
 }
 
-function getAddedFields()
+function getAddedFieldsHu()
 {
   return ["Current Version",
           "Updated Chapter",
@@ -165,7 +165,7 @@ function getAddedFields()
           "Hangul verified?"];
 }
 
-function getSharedFields()
+function getSharedFieldsHu()
 {
   return ["Picture",
   "Name",
