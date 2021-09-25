@@ -1,9 +1,9 @@
-function copyCurrentToGeneric(e)
+function copyCurrentToGenericHu(e)
 {
-  setAllToNull(e);
-  let cur = getCurrent(e);
-  setCurrent(e, cur);
-  setGenFieldsToCur(e, cur);
+  setAllToNullHu(e);
+  let cur = getCurrentHu(e);
+  setCurrentHu(e, cur);
+  setGenFieldsToCurHu(e, cur);
   e.set("Sorting Key", getKey (e));
   e.set("Current Status", cur.field("Status"));
 }
@@ -11,9 +11,9 @@ function copyCurrentToGeneric(e)
 //To make sure outdated data isn't accidentally kept in
 //Leave list of versions alone!
 
-function setAllToNull(e)
+function setAllToNullHu(e)
 {
-  const flds = getAllFields();
+  const flds = getAllFieldsHu();
   for (i in flds)
   {
     let f = flds[i].field;
@@ -23,7 +23,7 @@ function setAllToNull(e)
 }
 
 //get version entry labeled current
-function getCurrent(e)
+function getCurrentHu(e)
 {
   e.set("Introduced?", false);
   let cur = null;
@@ -52,7 +52,7 @@ function getCurrent(e)
 }
 
 //set a specific version entry as the most current one
-function setCurrent(e, cur)
+function setCurrentHu(e, cur)
 {
   cur.set("Spoiler Status", "Current Entry");
   //prevent duplicates
@@ -65,9 +65,9 @@ function setCurrent(e, cur)
 }
 
 //Set the generalized fields to match the "current" version
-function setGenFieldsToCur(e, cur)
+function setGenFieldsToCurHu(e, cur)
 {
-  let sharedFields = getSharedFields();
+  let sharedFields = getSharedFieldsHu();
 
   //Get&Set fields identical between generic and versioned
   for (i in sharedFields)
@@ -78,8 +78,8 @@ function setGenFieldsToCur(e, cur)
   }
 
   //Get&Set Attributes of those shared fields to match current
-  let aFields = getAttrFields();
-  let attrList = getFieldAttrs();
+  let aFields = getAttrFieldsHu();
+  let attrList = getFieldAttrsHu();
 
   for(j in aFields)
   {

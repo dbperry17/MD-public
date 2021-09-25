@@ -1,4 +1,4 @@
-function getSharedFields()
+function getSharedFieldsSt()
 {
   return ["Station Name",
           "Valid as of",

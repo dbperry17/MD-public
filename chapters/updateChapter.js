@@ -86,7 +86,7 @@ function setChapter(eList, start, lc)
 
 function setStations(statList)
 {
-  const filteredArray = getCurrentChars(statList);
+  const filteredArray = getCurrentEntries(statList);
   log("Finished stations setup, starting stations.");
   const fLen = filteredArray.length;
 
@@ -98,7 +98,7 @@ function setStations(statList)
   for (let s in filteredArray)
   {
     let v = filteredArray[s].field("Generalized Entry")[0];
-    copyCurrentToGeneric(v);
+    copyCurrentToGenericSt(v);
   }
 }
 
@@ -141,7 +141,7 @@ function validStationList(ch, list)
 
 function setHumans(charList)
 {
-  const filteredArray = getCurrentChars(charList);
+  const filteredArray = getCurrentEntries(charList);
   log("Finished humans setup, starting humans.");
   const fLen = filteredArray.length;
 
@@ -150,14 +150,11 @@ function setHumans(charList)
     filteredArray[i].set("Spoiler Status", "Current Entry");
   }
 
-  //let genListH = filteredArray;
- //= libByName("Humans — Versioned"). entries ();
-
   for (let h in filteredArray)
   {
     let v = filteredArray[h].field("Generalized Entry")[0];
     //log(v.field("Name"))
-    copyCurrentToGeneric(v);
+    copyCurrentToGenericHu(v);
     v.set("Introduced?", true);
   }
 }
@@ -232,7 +229,7 @@ const chSo = "Chapter Sort";
 //https://stackoverflow.com/a/53042397
 //Note: MD uses an old version of JavaScript, so objectValues() function needed to be written.
 //It is in all_libraries/misc.js
-function getCurrentChars(array)
+function getCurrentEntries(array)
 {
   let filteredArray = objectValues(array.reduce((unique, o) => {
     if(!unique[o.field(or)] || (+(o.field(chSo)) > +(unique[o.field(or)].field(chSo))))

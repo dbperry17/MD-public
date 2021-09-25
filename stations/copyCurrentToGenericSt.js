@@ -1,11 +1,11 @@
-function copyCurrentToGeneric(e)
+function copyCurrentToGenericSt(e)
 {
-  setAllToNull(e);
-  let cur = getCurrent(e);
+  setAllToNullSt(e);
+  let cur = getCurrentSt(e);
   let color = cur.field("Spoiler Status color");
   e.set("Spoiler Status color",color)
-  setCurrent(e, cur);
-  setGenFieldsToCur(e, cur);
+  setCurrentSt(e, cur);
+  setGenFieldsToCurSt(e, cur);
 }
 
 function setColor(e, cur)
@@ -17,9 +17,9 @@ function setColor(e, cur)
 //To make sure outdated data isn't accidentally kept in
 //Leave list of versions alone!
 
-function setAllToNull(e)
+function setAllToNullSt(e)
 {
-  const flds = getSharedFields();
+  const flds = getSharedFieldsSt();
   for (i in flds)
   {
     let f = flds[i];
@@ -29,7 +29,7 @@ function setAllToNull(e)
 }
 
 //get version entry labeled current
-function getCurrent(e)
+function getCurrentSt(e)
 {
   let cur = null;
 
@@ -55,7 +55,7 @@ function getCurrent(e)
 }
 
 //set a specific version entry as the most current one
-function setCurrent(e, cur)
+function setCurrentSt(e, cur)
 {
   cur.set("Spoiler Status", "Current Entry");
   //prevent duplicates
@@ -68,9 +68,9 @@ function setCurrent(e, cur)
 }
 
 //Set the generalized fields to match the "current" version
-function setGenFieldsToCur(e, cur)
+function setGenFieldsToCurSt(e, cur)
 {
-  let sharedFields = getSharedFields();
+  let sharedFields = getSharedFieldsSt();
 
   //Get&Set fields identical between generic and versioned
   for (i in sharedFields)

@@ -12,6 +12,8 @@ For the curious, the webcomic version can be found [here](https://www.webtoons.c
 
 # A note about debugging
 
-Unfortunately, some scripts that worked fine copying and pasting into each library seem to be disliked now that I'm using those same scripts via GitHub. As I am rather new to JavaScript, I am not always immediately able to spot these mistakes. Due to the nature of the "only started misbehaving when switching to GitHub" problem, there's really no way to try and debug these without constantly creating new commits, especially since I've pretty much exclusively used my phone for this due to the nature of the app.
+This is my first time using a library that is not saved locally. Further, as mentioned above, I almost exclusively use this in the phone version of the app, which does not have git integrated at all.
 
-As such, please excuse the messy commit history some of these files may have.
+As a result, altering pretty much anything in the library requires me to make a new commit because that is the only way to save changes to the file.
+
+Further, the lack of integration with Git means that using branches and pull-requests as a way to limit the amount of commits in main is difficult. I have made *some* attempts to solve this, but my main focus remains on getting the code to work rather than have a pretty commit history.
