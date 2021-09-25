@@ -84,6 +84,70 @@ function setChapter(eList, start, lc)
   log("Finished Stations.");
 }
 
+/**********
+ * HUMANS *
+ **********/
+
+function setHumans(charList)
+{
+  const filteredArray = getCurrentEntries(charList);
+  log("Finished humans setup, starting humans.");
+  const fLen = filteredArray.length;
+
+  for(var i = 0; i < fLen; i++)
+  {
+    filteredArray[i].set("Spoiler Status", "Current Entry");
+  }
+
+  for (let h in filteredArray)
+  {
+    let v = filteredArray[h].field("Generalized Entry")[0];
+    //log(v.field("Name"))
+    copyCurrentToGenericHu(v);
+    v.set("Introduced?", true);
+  }
+}
+
+function setHumanSpoiler(e, spoiler)
+{
+  var list = libByName("Humans — Versioned"). linksTo(e);
+
+  let eCh = e.field("Chapter #");
+  
+  var validList = validHumanList(eCh, list);
+
+  let len = validList.length;
+
+  for (let i = 0; i < len; i++)
+  {
+    let h = validList[i];
+    h.set("Spoiler Status", spoiler);
+  }
+
+  return validList;
+}
+
+function validHumanList(ch, list)
+{
+  var validList = [];
+  let len = list.length;
+
+  for (let i = 0; i < len; i++)
+  {
+  
+    let h = list[i];
+    let hCh = h.field("Chapter Sort");
+    if(hCh == ch)
+      validList.push(h);
+  }
+
+  return validList;
+}
+
+/************
+ * STATIONS *
+ ************/
+
 function setStations(statList)
 {
   const filteredArray = getCurrentEntries(statList);
@@ -138,26 +202,9 @@ function validStationList(ch, list)
   return validList;
 }
 
-
-function setHumans(charList)
-{
-  const filteredArray = getCurrentEntries(charList);
-  log("Finished humans setup, starting humans.");
-  const fLen = filteredArray.length;
-
-  for(var i = 0; i < fLen; i++)
-  {
-    filteredArray[i].set("Spoiler Status", "Current Entry");
-  }
-
-  for (let h in filteredArray)
-  {
-    let v = filteredArray[h].field("Generalized Entry")[0];
-    //log(v.field("Name"))
-    copyCurrentToGenericHu(v);
-    v.set("Introduced?", true);
-  }
-}
+/*************
+ * SCENARIOS *
+ ************/
 
 function setScenarios (scenList)
 {
@@ -169,42 +216,6 @@ function setScenarios (scenList)
     if(a.equals("Start") || a.equals("Ongoing"))
       l.set("Spoiler Status", "Current Entry");
   }
-}
-
-function setHumanSpoiler(e, spoiler)
-{
-  var list = libByName("Humans — Versioned"). linksTo(e);
-
-  let eCh = e.field("Chapter #");
-  
-  var validList = validHumanList(eCh, list);
-
-  let len = validList.length;
-
-  for (let i = 0; i < len; i++)
-  {
-    let h = validList[i];
-    h.set("Spoiler Status", spoiler);
-  }
-
-  return validList;
-}
-
-function validHumanList(ch, list)
-{
-  var validList = [];
-  let len = list.length;
-
-  for (let i = 0; i < len; i++)
-  {
-  
-    let h = list[i];
-    let hCh = h.field("Chapter Sort");
-    if(hCh == ch)
-      validList.push(h);
-  }
-
-  return validList;
 }
 
 function setScenarioSpoiler(e, status)
@@ -222,15 +233,15 @@ function setScenarioSpoiler(e, status)
   return scenList;
 }
 
-const na = "Name";
-const or = "Order introduced";
-const chSo = "Chapter Sort";
-
 //https://stackoverflow.com/a/53042397
 //Note: MD uses an old version of JavaScript, so objectValues() function needed to be written.
 //It is in all_libraries/misc.js
 function getCurrentEntries(array)
 {
+  const na = "Name";
+  const or = "Order introduced";
+  const chSo = "Chapter Sort";
+
   let filteredArray = objectValues(array.reduce((unique, o) => {
     if(!unique[o.field(or)] || (+(o.field(chSo)) > +(unique[o.field(or)].field(chSo))))
       unique[o.field(or)] = o;
