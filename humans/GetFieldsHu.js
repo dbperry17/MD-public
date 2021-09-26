@@ -119,6 +119,7 @@ function getVersionFieldsHu()
   {field:"Liked by"},
   {field:"Disliked by"},
   {field:"Neither liked nor disliked by"},
+  {field:"Introduced?"},
   {field:"Any Scenario Data?"},
   {field:"Main Scenario #4 activated?"},
   {field:"Mission 4: Flag Holder?"},
@@ -207,6 +208,7 @@ function getSharedFieldsHu()
   "Liked by",
   "Disliked by",
   "Neither liked nor disliked by",
+  "Introduced?"
   "Any Scenario Data?",
   "Main Scenario #4 activated?",
   "Mission 4: Flag Holder?",
