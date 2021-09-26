@@ -208,7 +208,7 @@ function getSharedFieldsHu()
   "Liked by",
   "Disliked by",
   "Neither liked nor disliked by",
-  "Introduced?"
+  "Introduced?",
   "Any Scenario Data?",
   "Main Scenario #4 activated?",
   "Mission 4: Flag Holder?",
