@@ -37,9 +37,8 @@ function getCurrentHu(e)
     {
       cur = v;
       let x = !((cur.field("Status")). equals("Future Character"));
-      message ("Not a future Character? " + x);
-      //if(!(cur.field("Status"). equals("Future Character")))
-        //e.set("Introduced?", true);
+      if(x)
+        e.set("Introduced?", true);
       break;
     }
   }
