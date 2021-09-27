@@ -63,10 +63,15 @@ function setChapter(eList, start, lc)
     {
       e.set("Read?", true);
       statList = setStationSpoiler (e, "Old Entry");
+      var tempListH = setHumanSpoiler(e, "Old Entry");
+      for (h in tempListH)
+        charList.push(tempListH[h]);
+/*
       //var tempListH
       charList = setHumanSpoiler(e, "Old Entry");
       //for (h in tempListH)
         //charList.push(tempListH[h]);
+*/
       var tempListS = setScenarioSpoiler(e, "Old Entry");
     
       if(eCh == lc)
@@ -76,7 +81,7 @@ function setChapter(eList, start, lc)
   }
 
   log("Finished chapters, starting humans setup");
-  setHumans(charList);
+  setHumans(charList, lc);
   log("Finished humans starting scenarios");
   setScenarios(scenList);
   log ("Finished scenarios, starting stations.");
@@ -88,7 +93,7 @@ function setChapter(eList, start, lc)
  * HUMANS *
  **********/
 
-function setHumans(charList)
+function setHumans(charList, lc)
 {
   const filteredArray = getCurrentEntries(charList);
   log("Finished humans setup, starting humans.");
@@ -104,7 +109,10 @@ function setHumans(charList)
     let v = filteredArray[h].field("Generalized Entry")[0];
     //log(v.field("Name"))
     copyCurrentToGenericHu(v);
-    v.set("Introduced?", true);
+    if(v.field("First Appearance")[0].field("Chapter #") > lc)
+      v.set("Introduced?", false);
+    else
+      v.set("Introduced?", true);
   }
 }
 
