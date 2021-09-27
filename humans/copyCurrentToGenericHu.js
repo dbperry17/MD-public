@@ -36,8 +36,8 @@ function getCurrentHu(e)
     if(v.field("Spoiler Status"). equals ("Current Entry"))
     {
       cur = v;
-      //Commented out because testing
-      //if(!(cur.field("Status"). equals("Future Character")));
+      if(!(cur.field("Status"). equals("Future Character")));
+        message ("Status = " + cur.field("Status"));
         //e.set("Introduced?", true);
       break;
     }
