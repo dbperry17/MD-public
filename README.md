@@ -17,3 +17,9 @@ This is my first time using a library that is not saved locally. Further, as men
 As a result, altering pretty much anything in the library requires me to make a new commit because that is the only way to save changes to the file.
 
 Further, the lack of integration with Git means that using branches and pull-requests as a way to limit the amount of commits in main is difficult. I have made *some* attempts to solve this, but my main focus remains on getting the code to work rather than have a pretty commit history.
+
+# Current Status
+
+Honestly, I started out seeing if it was possible to do one thing, succeeding, and then seeing if it was possible to do another thing, and then repeating.
+
+At this point, the code is currently not working like I want it to, and I think it may be best to restart from scratch to plan things properly now that I know my end goal.
