@@ -8,7 +8,7 @@ I am currently reading a very long story. I found the story in a webcomic format
 
 So I'm making my own personal "database" to keep track of everything. Further, I'm making it possible to re-use this database when I inevitably reread the story by making multiple versions of the same entries, which populate information in a single generic entry based on what I tell it is the latest chapter that I've read.
 
-For the curious, the webcomic version can be found [here](https://www.webtoons.com/en/action/omniscient-reader/episode-0-prologue/viewer?title_no=2154&episode_no=1). The novel version apparently has some debates regarding translation of names and/or terms, so I recommend looking for it yourself so that you can decide what you would prefer.
+For the curious, the webcomic version can be found [here](https://www.webtoons.com/en/action/omniscient-reader/episode-0-prologue/viewer?title_no=2154&episode_no=1), and the original novel version can be found [here](https://novelchapter.com/omniscient-readers-viewpoint-tueM4). Note that there are debates regarding the translations in both versions, so specific terms and/or spelling of character names may vary, even within the same version.
 
 # A note about debugging
 
