@@ -18,10 +18,10 @@ function epName(e)
   var name = names[num];
   var desc = "";
 
-  if(num == 0)
-    desc = "Prologue";
-  else
+  if(num != 0)
     desc = "Ep. " + num;
+  else
+    desc = "Prologue";
 
   desc += " — " + name;
 
