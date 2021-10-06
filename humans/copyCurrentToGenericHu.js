@@ -32,10 +32,16 @@ function getCurrentHu(e)
 
   for (i in versions)
   {
+    if(i == 0)
+      continue;
+    
     let v = versions [i];
-    if(v.field("Spoiler Status"). equals ("Current Entry"))
+    let vPrev = versions [i - 1];
+
+    if(v.field("Spoiler Status"). equals ("Future Entry")
+       && vPrev.field("Spoiler Status"). equals ("Old Entry"))
     {
-      cur = v;
+      cur = vPrev;
       let x = !((cur.field("Status")). equals("Future Character"));
       if(x)
         e.set("Introduced?", true);
@@ -43,10 +49,13 @@ function getCurrentHu(e)
     }
   }
 
+/*
+//commenting out while debugging
   if(cur == null)
   {
     cur = versions [0];
   }
+*/
 
   return cur;
 
