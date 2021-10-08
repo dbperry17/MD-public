@@ -49,13 +49,12 @@ function getCurrentHu(e)
     }
   }
 
-/*
-//commenting out while debugging
   if(cur == null)
   {
-    cur = versions [0];
+    //cur = versions [0];
+    log("it's gonna break");
   }
-*/
+
 
   return cur;
 
