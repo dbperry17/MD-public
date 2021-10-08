@@ -38,8 +38,12 @@ function getCurrentHu(e)
     let v = versions [i];
     let vPrev = versions [i - 1];
 
-    if(v.field("Spoiler Status"). equals ("Future Entry")
-       && vPrev.field("Spoiler Status"). equals ("Old Entry"))
+    let cond1 = v.field("Spoiler Status"). equals ("Future Entry");
+    let cond2 = vPrev.field("Spoiler Status"). equals ("Old Entry");
+    let cond3 = ((versions.length - 1) == i);
+    if(cond3)
+      vPrev = v;
+    if((cond1 && cond2) || cond3)
     {
       cur = vPrev;
       let x = !((cur.field("Status")). equals("Future Character"));
