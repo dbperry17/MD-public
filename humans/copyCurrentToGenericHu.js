@@ -43,7 +43,10 @@ function getCurrentHu(e)
     let cond3 = ((versions.length - 1) == i);
     if(cond3)
       vPrev = v;
-    if((cond1 && cond2) || cond3)
+
+    //JavaScript doesn't have XOR, so using workaround found at
+    //https://www.howtocreate.co.uk/xor.html
+    if((cond1 && cond2) != cond3)
     {
       cur = vPrev;
       let x = !((cur.field("Status")). equals("Future Character"));
