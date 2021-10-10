@@ -42,7 +42,7 @@ function getCurrentHu(e)
     let cond2 = vPrev.field("Spoiler Status"). equals ("Old Entry");
     //let cond3 = ((versions.length - 1) == i);
     //if(cond3)
-      vPrev = v;
+      //vPrev = v;
 
     if((cond1 && cond2))
     {
