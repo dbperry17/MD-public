@@ -34,7 +34,7 @@ function getCurrentHu(e)
   for (i in versions)
   {
     log("i = " + i);
-    const chSt = "Chapter Sort");
+    const chSt = "Chapter Sort";
     const spSt = "Spoiler Status";
     if(i == 0)
       continue;
