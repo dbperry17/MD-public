@@ -40,13 +40,11 @@ function getCurrentHu(e)
 
     let cond1 = v.field("Spoiler Status"). equals ("Future Entry");
     let cond2 = vPrev.field("Spoiler Status"). equals ("Old Entry");
-    let cond3 = ((versions.length - 1) == i);
-    if(cond3)
+    //let cond3 = ((versions.length - 1) == i);
+    //if(cond3)
       vPrev = v;
 
-    //JavaScript doesn't have XOR, so using workaround found at
-    //https://www.howtocreate.co.uk/xor.html
-    if((cond1 && cond2) != cond3)
+    if((cond1 && cond2))
     {
       cur = vPrev;
       let x = !((cur.field("Status")). equals("Future Character"));
@@ -57,10 +55,7 @@ function getCurrentHu(e)
   }
 
   if(cur == null)
-  {
-    //cur = versions [0];
-    log("it's gonna break");
-  }
+    cur = versions [versions.length - 1];
 
 
   return cur;
