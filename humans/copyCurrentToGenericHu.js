@@ -32,6 +32,7 @@ function getCurrentHu(e)
 
   for (i in versions)
   {
+    log("i = " + i);
     if(i == 0)
       continue;
     
@@ -46,16 +47,24 @@ function getCurrentHu(e)
 
     if((cond1 && cond2))
     {
+      log("Found Current; Chapter " + vPrev.field("Chapter Sort") + " version.");
       cur = vPrev;
       let x = !((cur.field("Status")). equals("Future Character"));
       if(x)
         e.set("Introduced?", true);
       break;
     }
+
+    log("Looping...");
   }
 
   if(cur == null)
+  {
     cur = versions [versions.length - 1];
+    log("cur == null, so using Chapter " + cur.field("Chapter Sort") + " version.");
+  }
+  else
+    log("cur was not null");
 
 
   return cur;
