@@ -25,6 +25,7 @@ function setAllToNullHu(e)
 //get version entry labeled current
 function getCurrentHu(e)
 {
+  log("Finding current version of " + e.field("Abbreviation"));
   e.set("Introduced?", false);
   let cur = null;
 
@@ -33,6 +34,8 @@ function getCurrentHu(e)
   for (i in versions)
   {
     log("i = " + i);
+    const chSt = "Chapter Sort");
+    const spSt = "Spoiler Status";
     if(i == 0)
       continue;
     
@@ -41,6 +44,9 @@ function getCurrentHu(e)
 
     let cond1 = v.field("Spoiler Status"). equals ("Future Entry");
     let cond2 = vPrev.field("Spoiler Status"). equals ("Old Entry");
+    log("Chapter " + vPrev.field(chSt) + " spoiler status: " + vPrev.field(spSt));
+    log("Chapter " + v.field(chSt) + " spoiler status: " + v.field(spSt));
+    log("cond1 = " + cond1 + ", cond2 = " + cond2 + ", (cond1 && cond2) = " + (cond1 && cond2));
     //let cond3 = ((versions.length - 1) == i);
     //if(cond3)
       //vPrev = v;
