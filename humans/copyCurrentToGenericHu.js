@@ -7,7 +7,7 @@ function copyCurrentToGenericHu(e, argCur)
   if(cur == null)
     cur = getCurrentHu(e);
 
-  let x = !((cur.field("Status")). equals("Future Character"));
+  let x = cur.field("Status Sort") != 5;
   if(x)
     e.set("Introduced?", true);
 
@@ -100,7 +100,7 @@ function getCurrentHu(e)
 //set a specific version entry as the most current one
 function setCurrentHu(e, cur)
 {
-  cur.set("Spoiler Status", "Current Entry");
+  //cur.set("Spoiler Status", "Current Entry");
   //prevent duplicates
   let curList = e.field("Current Version");
   if(curList.length > 0)
