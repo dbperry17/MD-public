@@ -6,6 +6,11 @@ function copyCurrentToGenericHu(e, argCur)
   let cur = argCur;
   if(cur == null)
     cur = getCurrentHu(e);
+
+  let x = !((cur.field("Status")). equals("Future Character"));
+  if(x)
+    e.set("Introduced?", true);
+
   setCurrentHu(e, cur);
   setGenFieldsToCurHu(e, cur);
   e.set("Sorting Key", getKey (e));
