@@ -1,9 +1,11 @@
 //curFound used in case current has already been found while setting chapters.
 //will be false if this script is called elsewhere
-function copyCurrentToGenericHu(e, curFound)
+function copyCurrentToGenericHu(e, argCur)
 {
   setAllToNullHu(e);
-  let cur = getCurrentHu(e, curFound);
+  let cur = argCur;
+  if(cur === null)
+    cur = getCurrentHu(e);
   setCurrentHu(e, cur);
   setGenFieldsToCurHu(e, cur);
   e.set("Sorting Key", getKey (e));
@@ -26,7 +28,7 @@ function setAllToNullHu(e)
 }
 
 //get version entry labeled current
-function getCurrentHu(e, curFound)
+function getCurrentHu(e)
 {
   log("Finding current version of " + e.field("Abbreviation"));
   e.set("Introduced?", false);
@@ -40,27 +42,10 @@ function getCurrentHu(e, curFound)
     const chSt = "Chapter Sort";
     const spSt = "Spoiler Status";
     if(i == 0)
-    {
-      if(curFound)
-      {
-        if(versions[i].field("Spoiler Status"). equals ("Current Entry"))
-          return versions [i];
-      }
-      else
-        continue;
-    }
+      continue;
 
     let v = versions [i];
     let vPrev = versions [i - 1];
-
-    if(curFound)
-    {
-      if(v.field(spSt). equals ("Current Entry"))
-      {
-        cur = v;
-        break;
-      }
-    }
 
     let cond1 = v.field("Spoiler Status"). equals ("Future Entry");
     let cond2 = vPrev.field("Spoiler Status"). equals ("Old Entry");
