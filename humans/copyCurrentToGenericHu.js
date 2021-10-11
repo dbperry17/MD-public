@@ -30,7 +30,15 @@ function setAllToNullHu(e)
 //get version entry labeled current
 function getCurrentHu(e)
 {
-  return e.field("Current Version");
+  let allV = e.field("All Versions");
+  for(let i in allV)
+  {
+    let v = allV[i];
+    if(v.field("Spoiler Sort") == 1)
+      return v;
+  }
+
+  return allV[allV.length - 1];
 /*
   log("Finding current version of " + e.field("Abbreviation"));
   e.set("Introduced?", false);
