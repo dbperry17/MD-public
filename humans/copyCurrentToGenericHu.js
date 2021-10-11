@@ -15,6 +15,9 @@ function copyCurrentToGenericHu(e, argCur)
   setGenFieldsToCurHu(e, cur);
   e.set("Sorting Key", getKey (e));
   e.set("Current Status", cur.field("Status"));
+
+  let i = (field("General Importance") < 3) || field("Current Importance");
+  e.set("List among important characters?", i);
 }
 
 //To make sure outdated data isn't accidentally kept in
