@@ -30,6 +30,8 @@ function setAllToNullHu(e)
 //get version entry labeled current
 function getCurrentHu(e)
 {
+  return e.field("Current Version");
+/*
   log("Finding current version of " + e.field("Abbreviation"));
   e.set("Introduced?", false);
   let cur = null;
@@ -79,7 +81,7 @@ function getCurrentHu(e)
 
 
   return cur;
-
+*/
 }
 
 //set a specific version entry as the most current one
