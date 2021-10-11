@@ -4,7 +4,7 @@ function copyCurrentToGenericHu(e, argCur)
 {
   setAllToNullHu(e);
   let cur = argCur;
-  if(cur === null)
+  if(cur == null)
     cur = getCurrentHu(e);
   setCurrentHu(e, cur);
   setGenFieldsToCurHu(e, cur);
