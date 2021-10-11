@@ -42,9 +42,12 @@ function getCurrentHu(e, curFound)
     if(i == 0)
     {
       if(curFound)
+      {
         if(versions[i].field("Spoiler Status"). equals ("Current Entry"))
           return versions [i];
-      continue;
+      }
+      else
+        continue;
     }
 
     let v = versions [i];
@@ -84,7 +87,7 @@ function getCurrentHu(e, curFound)
   if(cur == null)
   {
     cur = versions [versions.length - 1];
-    log("cur == null");//, so using Chapter " + cur.field("Chapter Sort") + " version.");
+    log("cur == null, so using Chapter " + cur.field("Chapter Sort") + " version.");
   }
   else
     log("cur was not null");
