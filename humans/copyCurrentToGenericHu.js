@@ -84,7 +84,7 @@ function getCurrentHu(e, curFound)
   if(cur == null)
   {
     cur = versions [versions.length - 1];
-    log("cur == null, so using Chapter " + cur.field("Chapter Sort") + " version.");
+    log("cur == null");//, so using Chapter " + cur.field("Chapter Sort") + " version.");
   }
   else
     log("cur was not null");
