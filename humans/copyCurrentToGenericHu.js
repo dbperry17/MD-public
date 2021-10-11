@@ -1,7 +1,9 @@
-function copyCurrentToGenericHu(e)
+//curFound used in case current has already been found while setting chapters.
+//will be false if this script is called elsewhere
+function copyCurrentToGenericHu(e, curFound)
 {
   setAllToNullHu(e);
-  let cur = getCurrentHu(e);
+  let cur = getCurrentHu(e, curFound);
   setCurrentHu(e, cur);
   setGenFieldsToCurHu(e, cur);
   e.set("Sorting Key", getKey (e));
@@ -10,6 +12,7 @@ function copyCurrentToGenericHu(e)
 
 //To make sure outdated data isn't accidentally kept in
 //Leave list of versions alone!
+//Also leave Abbreviation alone, because that never changes and it's useful for debugging.
 
 function setAllToNullHu(e)
 {
@@ -17,13 +20,13 @@ function setAllToNullHu(e)
   for (i in flds)
   {
     let f = flds[i].field;
-    if(!(f.equals("All Versions")))
+    if(!((f.equals("All Versions") && f.equals("Abbreviation")))
         clearUnlink(e, f);
   }
 }
 
 //get version entry labeled current
-function getCurrentHu(e)
+function getCurrentHu(e, curFound)
 {
   log("Finding current version of " + e.field("Abbreviation"));
   e.set("Introduced?", false);
@@ -37,10 +40,24 @@ function getCurrentHu(e)
     const chSt = "Chapter Sort";
     const spSt = "Spoiler Status";
     if(i == 0)
+    {
+      if(curFound)
+        if(versions[i].field("Spoiler Status"). equals ("Current Entry"))
+          return versions [i];
       continue;
-    
+    }
+
     let v = versions [i];
     let vPrev = versions [i - 1];
+
+    if(curFound)
+    {
+      if(v.field(spSt). equals ("Current Entry"))
+      {
+        cur = v;
+        break;
+      }
+    }
 
     let cond1 = v.field("Spoiler Status"). equals ("Future Entry");
     let cond2 = vPrev.field("Spoiler Status"). equals ("Old Entry");
