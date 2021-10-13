@@ -30,7 +30,9 @@ function setAllToNullHu(e)
   for (i in flds)
   {
     let f = flds[i].field;
-    if(!(f.equals("All Versions") || f.equals("Abbreviation")))
+    if(!(f.equals("All Versions") ||
+         f.equals("Abbreviation") ||
+         f.equals("General Thumbnail")))
         clearUnlink(e, f);
   }
 }
