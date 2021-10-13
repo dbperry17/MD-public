@@ -1,4 +1,4 @@
-//Opening entry view card, before display
+//Trigger, Updating, Before
 let e = entry();
 
 let keys = createKey(e);
