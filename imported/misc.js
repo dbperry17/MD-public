@@ -6,19 +6,6 @@ function sortProp(arr, prop)
   return arr;
 }
 
-//MD (on Android, at least) has an old version of JavaScript
-//This function is needed as a workaround for functions built in to later versions of JavaScript. Unfortunately, it appears that I failed to note the source of this bit of code.
-//Needed for getCurrentEntries()
-function objectValues(obj) {
-    var res = [];
-    for (var i in obj) {
-        if (Object.prototype.hasOwnProperty.call(obj, i)) {
-            res.push(obj[i]);
-        }
-    }
-    return res;
-}
-
 //Shortcut function
 function isArray(e, fld)
 {

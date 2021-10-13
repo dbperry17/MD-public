@@ -1,15 +1,28 @@
-function copyCurrentToGenericHu(e)
+//curFound used in case current has already been found while setting chapters.
+//will be false if this script is called elsewhere
+function copyCurrentToGenericHu(e, argCur)
 {
   setAllToNullHu(e);
-  let cur = getCurrentHu(e);
+  let cur = argCur;
+  if(cur == null)
+    cur = getCurrentHu(e);
+
+  let x = cur.field("Status Sort") != 5;
+  if(x)
+    e.set("Introduced?", true);
+
   setCurrentHu(e, cur);
   setGenFieldsToCurHu(e, cur);
   e.set("Sorting Key", getKey (e));
   e.set("Current Status", cur.field("Status"));
+
+  let i = (field("General Importance") < 3) || field("Current Importance");
+  e.set("List among important characters?", i);
 }
 
 //To make sure outdated data isn't accidentally kept in
 //Leave list of versions alone!
+//Also leave Abbreviation alone, because that never changes and it's useful for debugging.
 
 function setAllToNullHu(e)
 {
@@ -17,7 +30,7 @@ function setAllToNullHu(e)
   for (i in flds)
   {
     let f = flds[i].field;
-    if(!(f.equals("All Versions")))
+    if(!(f.equals("All Versions") || f.equals("Abbreviation")))
         clearUnlink(e, f);
   }
 }
@@ -25,6 +38,17 @@ function setAllToNullHu(e)
 //get version entry labeled current
 function getCurrentHu(e)
 {
+  let allV = e.field("All Versions");
+  for(let i in allV)
+  {
+    let v = allV[i];
+    if(v.field("Spoiler Sort") == 1)
+      return v;
+  }
+
+  return allV[allV.length - 1];
+/*
+  log("Finding current version of " + e.field("Abbreviation"));
   e.set("Introduced?", false);
   let cur = null;
 
@@ -32,29 +56,54 @@ function getCurrentHu(e)
 
   for (i in versions)
   {
+    log("i = " + i);
+    const chSt = "Chapter Sort";
+    const spSt = "Spoiler Status";
+    if(i == 0)
+      continue;
+
     let v = versions [i];
-    if(v.field("Spoiler Status"). equals ("Current Entry"))
+    let vPrev = versions [i - 1];
+
+    let cond1 = v.field("Spoiler Status"). equals ("Future Entry");
+    let cond2 = vPrev.field("Spoiler Status"). equals ("Old Entry");
+    log("Chapter " + vPrev.field(chSt) + " spoiler status: " + vPrev.field(spSt));
+    log("Chapter " + v.field(chSt) + " spoiler status: " + v.field(spSt));
+    log("cond1 = " + cond1 + ", cond2 = " + cond2 + ", (cond1 && cond2) = " + (cond1 && cond2));
+    //let cond3 = ((versions.length - 1) == i);
+    //if(cond3)
+      //vPrev = v;
+
+    if((cond1 && cond2))
     {
-      cur = v;
-      if(cur.field("Valid as of")[0].field("Read?"))
+      log("Found Current; Chapter " + vPrev.field("Chapter Sort") + " version.");
+      cur = vPrev;
+      let x = !((cur.field("Status")). equals("Future Character"));
+      if(x)
         e.set("Introduced?", true);
       break;
     }
+
+    log("Looping...");
   }
 
   if(cur == null)
   {
-    cur = versions [0];
+    cur = versions [versions.length - 1];
+    log("cur == null, so using Chapter " + cur.field("Chapter Sort") + " version.");
   }
+  else
+    log("cur was not null");
+
 
   return cur;
-
+*/
 }
 
 //set a specific version entry as the most current one
 function setCurrentHu(e, cur)
 {
-  cur.set("Spoiler Status", "Current Entry");
+  //cur.set("Spoiler Status", "Current Entry");
   //prevent duplicates
   let curList = e.field("Current Version");
   if(curList.length > 0)
