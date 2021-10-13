@@ -26,6 +26,6 @@ I should note that the code currently works much more slowly than I would like. 
 
 This was my first time using a library that was not saved locally. Further, as mentioned above, I almost exclusively used this in the phone version of the app, which does not have git integrated at all.
 
-As a result, altering pretty much anything in the scripts requires me to make a new commit because that is the only way to save changes to the file.
+As a result, altering pretty much anything in the scripts required me to make a new commit, because that was the only way to save changes to the file.
 
 I attempted to find a way to neaten up the commit history so that the small changes would not overwhelm the changes that I felt were actually worth committing, but this method did not work like I expected it to. Since I (appear to) have finished this project, I will let the many commits stand as they are, as I prefer an accurate history over a pretty history.
