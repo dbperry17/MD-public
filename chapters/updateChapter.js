@@ -1,3 +1,14 @@
+//Shared
+/*
+Imported files: 
+ - all_libraries/misc.js
+ - humans/copyCurrentToGenericHu.js
+ - humans/GetFieldsHu.js
+ - stations/copyCurrentToGenericSt.js
+ - stations/GetFieldsSt.js
+ - gist/uniq.js
+*/
+
 //by default, MD outputs entries in an array that is sorted by creation date.
 function getAndSortCh()
 {
