@@ -26,13 +26,12 @@ function copyCurrentToGenericHu(e, argCur)
 
 function setAllToNullHu(e)
 {
+  let ignoredFields = ["All Versions", "Abbreviation", "General Thumbnail", "Hangul Verified?"];
   const flds = getAllFieldsHu();
   for (i in flds)
   {
     let f = flds[i].field;
-    if(!(f.equals("All Versions") ||
-         f.equals("Abbreviation") ||
-         f.equals("General Thumbnail")))
+    if(!includes(ignoredFields, f))
         clearUnlink(e, f);
   }
 }
