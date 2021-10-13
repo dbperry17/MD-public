@@ -1,4 +1,5 @@
 //opening Library, before window display
+//Disabled, may be used for debugging in future
 let e = entry();
 
 let spSt = "Spoiler Status";
