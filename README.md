@@ -16,20 +16,16 @@ Memento Database does not allow scripts to be shared between libraries. While th
 
 Originally, I had a private repository simply to back up my code, but upon realizing that I could import a shared library via MD's "Add Github Repository" feature, I decided to make a public repository so that MD had access to it. I also decided to back up the scripts I had working within the app itself, rather than keeping those in my private repository, in case anyone else was able to use them.
 
-# A note about debugging
-
-This is my first time using a library that is not saved locally. Further, as mentioned above, I almost exclusively use this in the phone version of the app, which does not have git integrated at all.
-
-As a result, altering pretty much anything in the library requires me to make a new commit because that is the only way to save changes to the file.
-
-Further, the lack of integration with Git means that using branches and pull-requests as a way to limit the amount of commits in main is difficult.
-
-To neaten up the commit history, I alternated my main to be a different branch depending on the current status, and then made a pull request when I reached a stage that I felt would actually warrant a commit.
-
-The branches I alternated between for my main were `debug-main` and `real-main`, though one of those will be named `main` at all times simply because of limitations with Memento Database depending on my current status in the project. In case it is not obvious, `debug-main` is renamed to "main" while I debug, and `real-main` is renamed to "main" when everything is working as intended.
-
 # Current Status
 
 The main script that I wished to focus on (and have backed up) appears to be complete and working as expected. However, I have really only extensively tested this with the "Humans" libraries ("Humans — Generic" and "Humans — Versioned"). As I continue reading through the story and creating more entries in other categories, I may find errors there. Since they should theoretically work very similarly to things I already have, I do not currently foresee updating those very often.
 
 I should note that the code currently works much more slowly than I would like. I'm sure I could optimize it in several places, but at the time of writing, I do not have the knowledge to do so. Thus, the code is currently in a "Don't fix something that's not broken" status, because making sure it *works* is much more important to me than making sure it's *fast*.
+
+# A note about debugging
+
+This was my first time using a library that was not saved locally. Further, as mentioned above, I almost exclusively used this in the phone version of the app, which does not have git integrated at all.
+
+As a result, altering pretty much anything in the scripts requires me to make a new commit because that is the only way to save changes to the file.
+
+I attempted to find a way to neaten up the commit history so that the small changes would not overwhelm the changes that I felt were actually worth committing, but this method did not work like I expected it to. Since I (appear to) have finished this project, I will let the many commits stand as they are, as I prefer an accurate history over a pretty history.
