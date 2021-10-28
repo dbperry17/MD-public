@@ -17,6 +17,10 @@ Memento Database does not allow scripts to be shared between libraries. While th
 Originally, I had a private repository simply to back up my code, but upon realizing that I could import a shared library via MD's "Add Github Repository" feature, I decided to make a public repository so that MD had access to it. I also decided to back up the scripts I had working within the app itself, rather than keeping those in my private repository, in case anyone else was able to use them.
 
 # Current Status
+#### Short version:
+
+Maybe expect some minor tweaks in the future, but I believe it's complete.
+#### Long Version:
 
 The main script that I wished to focus on (and have backed up) appears to be complete and working as expected. However, I have really only extensively tested this with the "Humans" libraries ("Humans — Generic" and "Humans — Versioned"). As I continue reading through the story and creating more entries in other categories, I may find errors there. Since they should theoretically work very similarly to things I already have, I do not currently foresee updating those very often.
 
