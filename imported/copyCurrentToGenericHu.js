@@ -45,7 +45,7 @@ function getCurrentHu(e)
   for(let i in allV)
   {
     let v = allV[i];
-    log("Checking " + v.field("Custom Entry Name") + ". Spoiler Sort = " + v.field("Spoil Sort"));
+    log("Checking " + v.field("Custom Entry Name") + ". Spoiler Sort = " + v.field("Spoiler Sort"));
     if(v.field("Spoiler Sort") == 1)
     {
       log("Current: " + v.field("Custom Entry Name"));
