@@ -7,6 +7,8 @@ function copyCurrentToGenericHu(e, argCur)
   if(cur == null)
     cur = getCurrentHu(e);
 
+  log("Current: " + cur.field("Custom Entry Name"));
+
   let x = cur.field("Status Sort") != 5;
   if(x)
     e.set("Introduced?", true);
@@ -43,10 +45,15 @@ function getCurrentHu(e)
   for(let i in allV)
   {
     let v = allV[i];
+    log("Checking " + v.field("Custom Entry Name") + ". Spoiler Sort = " + v.field("Spoil Sort"));
     if(v.field("Spoiler Sort") == 1)
+    {
+      log("Current: " + v.field("Custom Entry Name"));
       return v;
+    }
   }
 
+  log("current not found");
   return allV[allV.length - 1];
 /*
   log("Finding current version of " + e.field("Abbreviation"));
