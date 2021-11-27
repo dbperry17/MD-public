@@ -20,3 +20,8 @@ function sortField(fieldName, myList)
 
   return -1;
 }
+
+function leadingZerosField(n)
+{
+  return ('000'+n).slice(-3);
+}
