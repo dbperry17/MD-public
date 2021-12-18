@@ -19,12 +19,13 @@ Originally, I had a private repository simply to back up my code, but upon reali
 # Current Status
 #### Short version:
 
-Maybe expect some minor tweaks in the future, but I believe it's complete.
+~~Maybe expect some minor tweaks in the future, but I believe it's complete.~~
+
+Currently working on Version 2, as I've figured out some workarounds to improve runtime of the scripts.
+
 #### Long Version:
 
-The main script that I wished to focus on (and have backed up) appears to be complete and working as expected. However, I have really only extensively tested this with the "Humans" libraries ("Humans — Generic" and "Humans — Versioned"). As I continue reading through the story and creating more entries in other categories, I may find errors there. Since they should theoretically work very similarly to things I already have, I do not currently foresee updating those very often.
-
-I should note that the code currently works much more slowly than I would like. I'm sure I could optimize it in several places, but at the time of writing, I do not have the knowledge to do so. Thus, the code is currently in a "Don't fix something that's not broken" status, because making sure it *works* is much more important to me than making sure it's *fast*.
+While the scripts all technically work, they go much more slowly than I'd like due to some loops that I found unavoidable when programming originally. However, I've since figured out some ways to work around some of the limitations of Memento Database, and am currently looking into improving performance.
 
 # A note about debugging
 
