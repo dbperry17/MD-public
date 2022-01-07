@@ -26,11 +26,11 @@ Currently working on Version 2, as I've figured out some workarounds to improve 
 #### Long Version:
 
 While the scripts all technically work, they go much more slowly than I'd like due to some loops that I found unavoidable when programming originally. However, I've since figured out some ways to work around some of the limitations of Memento Database, and am currently looking into improving performance. Improvements include:
-* Using JavaScript fields to ask the "Current Version" what its field values are (instead of updating every field in a for-loop) for any field that is not a linked entry.
-* Creating a library with a single entry with fields for certain "global variables" that I want *all* my libraries to have access to.
-* Eliminating certain fields from the "Versioned" libraries that never change, and keeping the information that stays consistent between versions confined to the generalized libraries.
+* Using JavaScript fields to ask the "Current Version" what its field values are when I open the entry (instead of updating every field in every entry inside a double for-loop all at once) for any field that is not a linked entry.
+* Creating a library with a single entry with fields for certain "global variables" that I want *all* my libraries to have access to (e.g. "Latest Chapter")
+* Eliminating certain fields from the "Versioned" libraries that never change (such as the order they were introduced in the story), and keeping the information that stays consistent between versions confined to the generalized libraries.
 
-Currently, I am documenting the changes in a way to make it easier to adjust my scripts.
+Currently, I am adjusting the libraries to work with these improvements prior to doing the programming itself. As such, the code here on GitHub is suitable for version 1 only.
 
 # A note about debugging
 
