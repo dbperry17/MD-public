@@ -25,7 +25,12 @@ Currently working on Version 2, as I've figured out some workarounds to improve 
 
 #### Long Version:
 
-While the scripts all technically work, they go much more slowly than I'd like due to some loops that I found unavoidable when programming originally. However, I've since figured out some ways to work around some of the limitations of Memento Database, and am currently looking into improving performance.
+While the scripts all technically work, they go much more slowly than I'd like due to some loops that I found unavoidable when programming originally. However, I've since figured out some ways to work around some of the limitations of Memento Database, and am currently looking into improving performance. Improvements include:
+* Using JavaScript fields to ask the "Current Version" what its field values are (instead of updating every field in a for-loop) for any field that is not a linked entry.
+* Creating a library with a single entry with fields for certain "global variables" that I want *all* my libraries to have access to.
+* Eliminating certain fields from the "Versioned" libraries that never change, and keeping the information that stays consistent between versions confined to the generalized libraries.
+
+Currently, I am documenting the changes in a way to make it easier to adjust my scripts.
 
 # A note about debugging
 
