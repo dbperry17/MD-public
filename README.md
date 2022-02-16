@@ -32,10 +32,12 @@ While the scripts all technically work, they go much more slowly than I'd like d
 
 Currently, I am adjusting the libraries to work with these improvements prior to doing the programming itself. As such, the code here on GitHub is suitable for version 1 only.
 
+Small update: As I adjust the coding to work with V2, all code that worked with V1 will slowly be copied into a subfolder called "Old." While I am aware I can simply recert to the V1 commit if needed, I'd like to have completed versions of the code easily accessible instead of having to search through commits made while coding and debugging were in progress.
+
 # A note about debugging
 
 This was my first time using a library that was not saved locally. Further, as mentioned above, I almost exclusively used this in the phone version of the app, which does not have git integrated at all.
 
 As a result, altering pretty much anything in the scripts required me to make a new commit, because that was the only way to save changes to the file.
 
-I attempted to find a way to neaten up the commit history so that the small changes would not overwhelm the changes that I felt were actually worth committing, but this method did not work like I expected it to. Since I (appear to) have finished this project, I will let the many commits stand as they are, as I prefer an accurate history over a pretty history.
+Please excuse the very messy commit history. I believe I have a better way to go about it in V2, but I don't know if it will work at this time.
