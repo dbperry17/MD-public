@@ -68,3 +68,16 @@ function mySort(fieldVal, myList)
     if(fieldVal == myList[i])
       return i+1;
 }
+
+function findMatchingVersion(versioned, key)
+{
+	for (let i in versioned)
+	{
+		let v = versioned [i];
+		let vKey = v.field("General Key");
+		if(key.equals(vKey))
+			return v;
+	}
+  
+  return null;
+}
