@@ -24,7 +24,7 @@ function setAllToNullHu(e, flds)
 //get version entry labeled current
 function getCurrentHu(e)
 {
-  let versList = libByName("globals").entries()[0].field("Latest Chapter").field("Current Versioned Humans");
+  let versList = libByName("globals").entries()[0].field("Latest Chapter")[0].field("Current Versioned Humans");
   
   return findMatchingVersion(versList, e.field("General Key"));
 }
