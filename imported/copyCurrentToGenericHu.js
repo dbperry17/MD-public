@@ -1,5 +1,5 @@
 //argCur used in case current has already been found in the method calling this one.
-function copyCurrentToGenericHu(e, argCur)
+function updateGenericToCurrentHu(e, argCur)
 {
   let flds = getManualFieldsHu();
 	setAllToNullHu(e, flds);
