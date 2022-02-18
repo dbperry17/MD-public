@@ -2,14 +2,14 @@
 function copyCurrentToGenericHu(e, argCur)
 {
   let flds = getManualFieldsHu();
-	setAllToNullHu(e);
+	setAllToNullHu(e, flds);
 	let cur = argCur;
 	if(cur===null)
 		cur = getCurrentHu(e);
   
   log("Current: " + cur.field("Custom Entry Name"));
   setCurrentHu(e, cur);
-	setGenFieldsToCurHu(e, cur);
+	setGenFieldsToCurHu(e, cur, flds);
 }
 
 function setAllToNullHu(e, flds)
