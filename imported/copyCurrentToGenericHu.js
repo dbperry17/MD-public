@@ -56,10 +56,12 @@ function setGenFieldsToCurHu(e, cur, flds)
 		e.set(fld, cf);
 		
 		if(!(att===undefined))
+		{
 			for(let j in cf)
 			{
-				let ca = cur.field(fld)[j].attr(att);
-				e.field(fld)[j].setAttr(ca, cf[j].attr(att));
+				let ca = cf[j].attr(att);
+				e.field(fld)[j].setAttr(att, ca);
 			}
+		}
 	}	
 }
