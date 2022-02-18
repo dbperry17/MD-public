@@ -19,6 +19,8 @@ function setAllToNullHu(e, flds)
 		let f = flds[i].field;
 		clearUnlink(e, f);
 	}
+
+  message("test");
 }
 
 //get version entry labeled current
