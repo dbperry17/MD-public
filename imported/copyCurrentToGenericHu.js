@@ -4,7 +4,7 @@ function updateGenericToCurrentHu(e, argCur)
 	let cur = argCur;
 	if(cur===null)
 	{
-		message ("cur was null for " + e.field("Name"));
+		log ("cur was null for " + e.field("Name") + ". Will use getCurrentHu().");
 		cur = getCurrentHu(e);
 	}
 
