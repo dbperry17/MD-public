@@ -48,24 +48,18 @@ function setCurrentHu(e, cur)
 //Set the generalized fields to match the "current" version
 function setGenFieldsToCurHu(e, cur, flds)
 {
-	for (i in flds)
+	for (let i in flds)
 	{
 		let fld = flds[i].field;
+		let att = flds[i].attr;
 		let cf = cur.field(fld);
 		e.set(fld, cf);
-	}
-	
-	let aFields = getAttrFieldsHu();
-	let attrList = getFieldAttrsHu();
-	
-	for(j in aFields)
-	{
-		let fld = aFields[j];
-		let att = attrList[j];
-		let cf = cur.field(fld);
-		for(k in cf)
-		{
-			e.field(fld)[k].setAttr(att, cf[k].attr(att));
-		}
-	}
+		
+		if(!(att===undefined))
+			for(let j in cf)
+			{
+				let ca = cur.field(fld).attr(att);
+				e.field(fld)[j].setAttr(ca, cf[j].attr(att));
+			}
+	}	
 }
