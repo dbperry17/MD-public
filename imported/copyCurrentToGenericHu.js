@@ -19,8 +19,6 @@ function setAllToNullHu(e, flds)
 		let f = flds[i].field;
 		clearUnlink(e, f);
 	}
-
-  message("test");
 }
 
 //get version entry labeled current
@@ -48,7 +46,7 @@ function setGenFieldsToCurHu(e, cur, flds)
 {
 	for (i in flds)
 	{
-		let fld = flds[i];
+		let fld = flds[i].field;
 		let cf = cur.field(fld);
 		e.set(fld, cf);
 	}
