@@ -1,7 +1,6 @@
 function getManualFieldsHu()
 {
   return [{field:"Picture"},
-  {field:"Current Version"},
   {field:"Originally in TWSA?"},
   {field:"Read TWSA?"},
   {field:"Achievements"},
