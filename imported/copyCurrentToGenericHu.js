@@ -3,10 +3,10 @@ function updateGenericToCurrentHu(e, argCur)
 {
 	let names = ""
 	let cur = argCur;
-	if(cur===null)
+	if(cur===null || cur===undefined)
 	{
 		names += e.field("Name") + ", ";
-		 //("cur was null for " + e.field("Name") + ". Will use getCurrentHu().");
+		//("cur was null for " + e.field("Name") + ". Will use getCurrentHu().");
 		cur = getCurrentHu(e);
 	}
 
