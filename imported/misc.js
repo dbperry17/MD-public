@@ -65,6 +65,16 @@ function findMatchingVersion(versioned, key)
 		if(key.equals(vKey))
 			return v;
 	}
-  
-  return null;
+	
+	return null;
+}
+
+function start()
+{
+	return Date.now();
+}
+
+function end (start)
+{
+	message ("Duration: " + ((Date.now() - start)/1000) + " seconds");
 }
