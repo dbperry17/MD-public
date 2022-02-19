@@ -1,24 +1,23 @@
 function getManualFieldsHu()
 {
-  return [{field:"Picture"},
-  {field:"Originally in TWSA?"},
-  {field:"Read TWSA?"},
-  {field:"Achievements"},
-  {field:"Contracts"},
-  {field:"Supporting Constellation"},
-  {field:"Stigma", attr:"Level"},
-  {field:"Personal Attributes", attr:"Extra notes"},
-  {field:"Personal Skills", attr:"Level"},
-  {field:"Any stats known?"},
-  {field:"Important Items"},
-  {field:"Single Use Items", attr:"Amount owned"},
-  {field:"Liked by"},
-  {field:"Disliked by"},
-  {field:"Neither liked nor disliked by"},
-  {field:"Any Scenario Data?"},
-  {field:"Main Scenario #4 activated?"},
-  {field:"Mission 4: Flag Holder?"},
-  {field:"Sorting Key"}];
+  return [{field:"Picture", type:"Array"},
+  {field:"Originally in TWSA?", type:"Boolean"}, //Must be boolean instead of JS field because of dependencies
+  {field:"Read TWSA?", type:"Boolean"}, //Must be boolean instead of JS field because of dependencies
+  {field:"Achievements", type:"Array"},
+  {field:"Contracts", type:"Array"},
+  {field:"Supporting Constellation", type:"Array"},
+  {field:"Stigma", attr:"Level", type:"Array"},
+  {field:"Personal Attributes", attr:"Extra notes", type:"Array"},
+  {field:"Personal Skills", attr:"Level", type:"Array"},
+  {field:"Any stats known?", type:"Boolean"}, //Must be boolean instead of JS field because of dependencies
+  {field:"Important Items", type:"Array"},
+  {field:"Single Use Items", attr:"Amount owned", type:"Array"},
+  {field:"Liked by", type:"Array"},
+  {field:"Disliked by", type:"Array"},
+  {field:"Neither liked nor disliked by", type:"Array"},
+  {field:"Any Scenario Data?", type:"Boolean"}, //Must be boolean instead of JS field because of dependencies
+  {field:"Main Scenario #4 activated?", type:"Boolean"}, //Must be boolean instead of JS field because of dependencies
+  {field:"Mission 4: Flag Holder?", type:"Boolean"}]; //Must be boolean instead of JS field because of dependencies
 }
 
 /*
