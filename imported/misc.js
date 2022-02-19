@@ -35,20 +35,7 @@ function setLink(e, fld, value)
 function clearUnlink(e, fld)
 {
   if(isArray(e, fld))
-  {
-    let value = e.field(fld);
-    for (i in value)
-    {
-      if(value[0].constructor == String)
-        e.set(fld, null); //move outside for-loop?
-      else if(value[0] instanceof Entry)
-      {
-          e.unlink(fld, value [i]);
-      }
-      else
-        str+="Error: type not accounted for";
-    }
-  }
+    e.set(fld, []);
   else
     e.set(fld, null);
 }
