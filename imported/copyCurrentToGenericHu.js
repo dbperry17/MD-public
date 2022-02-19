@@ -32,12 +32,7 @@ function getCurrentHu(e)
 //set a specific version entry as the most current one
 function setCurrentHu(e, cur)
 {
-	//cur.set("Spoiler Status", "Current Entry");
-	//prevent duplicates
-	let curList = e.field("Current Version");
-	if(curList.length > 0)
-		for(i in curList) //should theoretically only be one entry, but just in case
-			e.unlink("Current Version", curList[i]);
+	e.set("Current Version", []);
 	e.link("Current Version", cur);
 }
 
