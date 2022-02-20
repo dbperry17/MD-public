@@ -76,5 +76,5 @@ function start()
 
 function end (start)
 {
-	message ("Duration: " + ((Date.now() - start)/1000) + " seconds");
+	log ("Duration: " + ((Date.now() - start)/1000) + " seconds");
 }
