@@ -74,10 +74,10 @@ function start()
 	return Date.now();
 }
 
-function end (start, process, isMessage)
+function end (start, process, isArray)
 {
-	if(isMessage)
-		message("Duration of " + process + ": " + ((Date.now() - start)/1000) + " seconds");
+	if(isArray)
+		return "Duration of " + process + ": " + ((Date.now() - start)/1000) + " seconds");
 	else
-		log ("Duration of " + process + ": " + ((Date.now() - start)/1000) + " seconds");
+		return [process, ((Date.now() - start)/1000)];
 }
