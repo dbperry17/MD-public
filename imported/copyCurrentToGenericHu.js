@@ -31,10 +31,10 @@ if((e.field("General Key")). equals ("GI1—OR008—YJH"))
 {
   if(!getEnd.equals(""))
     output ("Junghyeok's getCurrent", getEnd);
-  output ("Junghyeok's getCurrent", manFldEnd);
-  output ("Junghyeok's getCurrent", getEnd);
-  output ("Junghyeok's getCurrent", getEnd);
-  output ("Junghyeok's getCurrent", getEnd);
+  output ("Junghyeok's manFld", manFldEnd);
+  output ("Junghyeok's setNull", nullEnd);
+  output ("Junghyeok's setCur", setCurEnd);
+  output ("Junghyeok's setFlds", setFldsEnd);
 }
 }
 
