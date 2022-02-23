@@ -1,15 +1,31 @@
 //argCur used in case current has already been found in the method calling this one.
 function updateGenericToCurrentHu(e, argCur)
 {
+
+let getStart = start();
 	let cur = argCur;
 	if(cur===null || cur===undefined)
+{
 		cur = getCurrentHu(e);
+if(e.field("Entry Name"). equals ("Yu Junghyeok"))
+  output ("Junghyeok's getCurrent", end(getStart));
+}
 
+let fldStart = start();
 	let flds = getManualFieldsHu();
+output ("get manual fields", end(fldStart));
+
+let nullStart = start();
 	setAllToNullHu(e, flds);
+output ("set all to null", end(nullStart));
   
+let setCurStart = start();
 	setCurrentHu(e, cur);
+output ("set current", end(setCurStart));
+
+let setFldsStart = start();
 	setGenFieldsToCurHu(e, cur, flds);
+output("set flds to cur", end(setFldsStart));
 }
 
 function setAllToNullHu(e, flds)
