@@ -3,29 +3,39 @@ function updateGenericToCurrentHu(e, argCur)
 {
 
 let getStart = start();
+let getEnd = "";
 	let cur = argCur;
 	if(cur===null || cur===undefined)
 {
 		cur = getCurrentHu(e);
-if(e.field("Entry Name"). equals ("Yu Junghyeok"))
-  output ("Junghyeok's getCurrent", end(getStart));
+getEnd = end(getStart);
 }
 
-let fldStart = start();
+let manFldStart = start();
 	let flds = getManualFieldsHu();
-output ("get manual fields", end(fldStart));
+let manFldEnd = end(manFldStart);
 
 let nullStart = start();
 	setAllToNullHu(e, flds);
-output ("set all to null", end(nullStart));
+let nullEnd =  end(nullStart);
   
 let setCurStart = start();
 	setCurrentHu(e, cur);
-output ("set current", end(setCurStart));
+let setCurEnd = end(setCurStart);
 
 let setFldsStart = start();
 	setGenFieldsToCurHu(e, cur, flds);
-output("set flds to cur", end(setFldsStart));
+let setFldsEnd = end(setFldsStart);
+
+if((e.field("General Key")). equals ("GI1—OR008—YJH"))
+{
+  if(!getEnd.equals(""))
+    output ("Junghyeok's getCurrent", getEnd);
+  output ("Junghyeok's getCurrent", manFldEnd);
+  output ("Junghyeok's getCurrent", getEnd);
+  output ("Junghyeok's getCurrent", getEnd);
+  output ("Junghyeok's getCurrent", getEnd);
+}
 }
 
 function setAllToNullHu(e, flds)
