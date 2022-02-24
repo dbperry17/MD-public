@@ -79,5 +79,5 @@ function end (start, process, isArray)
 	if(isArray)
 		return "Duration of " + process + ": " + ((Date.now() - start)/1000) + " seconds";
 	else
-		return ((Date.now() - start)/100);
+		return ((Date.now() - start)/1000);
 }
