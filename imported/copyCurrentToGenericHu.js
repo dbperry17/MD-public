@@ -12,9 +12,9 @@ getEnd = end(getStart);
 }
 	let flds = getManualFieldsHu();
 
-let nullStart = start();
-	setAllToNullHu(e, flds);
-let nullEnd =  end(nullStart);
+// let nullStart = start();
+// 	setAllToNullHu(e, flds);
+// let nullEnd =  end(nullStart);
   
 let setCurStart = start();
 	setCurrentHu(e, cur);
@@ -28,7 +28,7 @@ if((e.field("General Key")). equals ("GI1—OR008—YJH"))
 {
   if(!getEnd.equals(""))
     output ("Junghyeok's getCurrent", getEnd);
-  output ("Junghyeok's setNull", nullEnd);
+  //output ("Junghyeok's setNull", nullEnd);
   output ("Junghyeok's setCur", setCurEnd);
   output ("Junghyeok's setFlds", setFldsEnd);
 }
