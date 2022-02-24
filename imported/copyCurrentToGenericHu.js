@@ -10,10 +10,7 @@ let getEnd = "";
 		cur = getCurrentHu(e);
 getEnd = end(getStart);
 }
-
-let manFldStart = start();
 	let flds = getManualFieldsHu();
-let manFldEnd = end(manFldStart);
 
 let nullStart = start();
 	setAllToNullHu(e, flds);
@@ -31,7 +28,6 @@ if((e.field("General Key")). equals ("GI1—OR008—YJH"))
 {
   if(!getEnd.equals(""))
     output ("Junghyeok's getCurrent", getEnd);
-  output ("Junghyeok's manFld", manFldEnd);
   output ("Junghyeok's setNull", nullEnd);
   output ("Junghyeok's setCur", setCurEnd);
   output ("Junghyeok's setFlds", setFldsEnd);
@@ -72,13 +68,13 @@ function setGenFieldsToCurHu(e, cur, flds)
 		let cf = cur.field(fld);
 		e.set(fld, cf);
 		
-		if(!(att===undefined))
-		{
-			for(let j in cf)
-			{
-				let ca = cf[j].attr(att);
-				e.field(fld)[j].setAttr(att, ca);
-			}
-		}
+// 		if(!(att===undefined))
+// 		{
+// 			for(let j in cf)
+// 			{
+// 				let ca = cf[j].attr(att);
+// 				e.field(fld)[j].setAttr(att, ca);
+// 			}
+// 		}
 	}	
 }
