@@ -41,8 +41,7 @@ function getFieldAttrsHu()
 function getManualFieldsDk()
 {
   return [{field:"Picture", type:"Array"},
-  {field:"Contracts", type:"Array"},
-  {field:"Current Version", type:"Array"}];
+  {field:"Contracts", type:"Array"}];
 }
 
 //Whittle down later when I can, just getting it on github
