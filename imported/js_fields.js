@@ -29,11 +29,13 @@ function leadingZeros(n)
 {
   return ('000'+n).slice(-3);
 }
-
+/*
 function getTypeEntry()
 {
   let e = null;
   let type = field("Type");
+
+  e = field("Concept
 
   switch(type)
   {
@@ -74,3 +76,4 @@ function getTypeEntry()
 
   return e;
 }
+*/
