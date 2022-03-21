@@ -44,39 +44,10 @@ function getManualFieldsDk()
   {field:"Contracts", type:"Array"}];
 }
 
-//Whittle down later when I can, just getting it on github
 function getManualFieldsCon()
 {
-  return [{field:"Picture", type: ""},
-  {field:"Screen Name", type: ""},
-  {field:"Order Introduced", type: ""},
-  {field:"Alternate Translations", type: ""},
-  {field:"Real Name", type: ""},
-  {field:"Alignment", type: ""},
-  {field:"Type", type: ""},
-  {field:"Dokja's Analysis", type: ""},
-  {field:"Trivia", type: ""},
-  {field:"Extra Notes", type: ""},
-  {field:"Contracts", type: ""},
-  {field:"Stigmas", type: ""},
-  {field:"Incarnations", type: ""},
-  {field:"Total Spent", type: ""},
-  {field:"Total Earned", type: ""},
-  {field:"Total Coins Spent Helping Dokja", type: ""},
-  {field:"Total Coins Spent Hindering Dokja", type: ""},
-  {field:"Spoiler Status", type: ""},
-  {field:"Chapters with coins spent", type: ""},
-  {field:"Chapters with coins spent:Coins Spent Helping Dokja", type: ""},
-  {field:"Chapters with coins spent:Coins Spent Hindering Dokja", type: ""},
-  {field:"Chapters with coins spent:Coins Spent (Total)", type: ""},
-  {field:"Entry Name", type: ""},
-  {field:"Sort All", type: ""},
-  {field:"Identifier", type: ""},
-  {field:"Generic Thumbnail", type: ""},
-  {field:"Chapter Sort", type: ""},
-  {field:"globals", type: ""},
-  {field:"All Characters Entry", type: ""},
-  {field:"Current Version", type: ""},
-  {field:"First Appearance", type: ""},
-  {field:"All Versions"}];
+  return [{field:"Picture", type: "Array"},
+  {field:"Contracts", type: "Array"},
+  {field:"Stigmas", type: "Array"},
+  {field:"Incarnations", type: "Array"}];
 }
