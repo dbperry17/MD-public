@@ -51,3 +51,14 @@ function getManualFieldsCon()
   {field:"Stigmas", type: "Array"},
   {field:"Incarnations", type: "Array"}];
 }
+
+function getManualFieldsSt()
+{
+  return [{field: "Valid as of", type: "Array"},
+          {field: "Flag Color", type: "String"}, //must be manual because colors/icons
+          {field: "Target Station", type: "Array"},
+          {field: "Targeted by", type: "Array"},
+          {field: "Allies", type: "Array"},
+          {field: "Leader", type: "Array"},
+          {field: "Members", type: "Array"}];
+}
