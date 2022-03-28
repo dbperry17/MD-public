@@ -37,15 +37,18 @@ function updateGenericToCurrentCon(e, argCur)
 	syncFields(e, cur, flds, false);
 }
 
-//Is this function used anymore? Commenting out to check
-/*function setAllToNull(e, flds)
+//argCur used in case current has already been found in the method calling this one.
+function updateGenericToCurrentSt(e, argCur)
 {
-	for (i in flds)
-	{
-		let f = flds[i].field;
-		clearUnlink(e, f);
-	}
-}*/
+	let cur = argCur;
+	if(cur===null || cur===undefined)
+		cur = getCurrent(e, "Stations");
+
+	let flds = getManualFieldsSt();
+
+	setCurrent(e, cur);
+	syncFields(e, cur, flds, false);
+}
 
 //get version entry labeled current
 function getCurrent(e, type)
@@ -58,8 +61,8 @@ function getCurrent(e, type)
 //set a specific version entry as the most current one
 function setCurrent(e, cur)
 {
-	e.set("Current Version", []);
-	e.link("Current Version", cur);
+	e.set("Current Version", [cur]);
+	//e.link("Current Version", cur);
 }
 
 //Set the generalized fields to match the "current" version
