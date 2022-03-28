@@ -1,6 +1,7 @@
 function getManualFieldsHu()
 {
   return [{field:"Picture", type:"Array"},
+  {field:"Valid As Of", type:"Array"},
   {field:"Originally in TWSA?", type:"Boolean"}, //Must be boolean instead of JS field because of dependencies
   {field:"Read TWSA?", type:"Boolean"}, //Must be boolean instead of JS field because of dependencies
   {field:"Achievements", type:"Array"},
@@ -41,12 +42,14 @@ function getFieldAttrsHu()
 function getManualFieldsDk()
 {
   return [{field:"Picture", type:"Array"},
+  {field:"Valid As Of", type:"Array"},
   {field:"Contracts", type:"Array"}];
 }
 
 function getManualFieldsCon()
 {
   return [{field:"Picture", type: "Array"},
+  {field:"Valid As Of", type:"Array"},
   {field:"Contracts", type: "Array"},
   {field:"Stigmas", type: "Array"},
   {field:"Incarnations", type: "Array"}];
