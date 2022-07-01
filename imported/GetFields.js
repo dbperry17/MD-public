@@ -2,6 +2,7 @@ function getManualFieldsHu()
 {
   return [{field:"Picture", type:"Array"},
   {field:"Valid As Of", type:"Array"},
+  {field:"Current Status", type:"String"},
   {field:"Originally in TWSA?", type:"Boolean"}, //Must be boolean instead of JS field because of dependencies
   {field:"Read TWSA?", type:"Boolean"}, //Must be boolean instead of JS field because of dependencies
   {field:"Achievements", type:"Array"},
